@@ -34,17 +34,16 @@ public class Game {
                             title = String.valueOf(charHidden);
                         }
                     }
-                    char underscore = '_';
-                    boolean noUnderscore = title.indexOf(underscore) == -1;
+
+                    boolean noUnderscore = title.indexOf('_') == -1;
                     if (noUnderscore) {
                         break;
                     }
-
                     System.out.println("You have " + x + " guesses");
                     System.out.println(title);
                 }
-                char underscore = '_';
-                boolean noUnderscore = title.indexOf(underscore) == -1;
+
+                boolean noUnderscore = title.indexOf('_') == -1;
                 if (noUnderscore) {
                     System.out.println("You win! ");
                     System.out.println("The movie is :  " + title);
