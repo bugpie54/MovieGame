@@ -14,28 +14,21 @@ public class Game {
                 "your guesses number depends on the movie title length.");
 
         if (!movieTitle.isEmpty()) {
-            // char[] array = randomMovieTitle.toCharArray();
             int stringCharTotal = movieTitle.length();
-            // System.out.println(movieTitle.length());
 
             try {
-                int x = movieTitle.length();
+                int x = stringCharTotal;
                 String title = movieTitle.replaceAll("[a-zA-Z]", "_"); // replace each letter with an "_"
-                int index = 0;
-                char character = movieTitle.charAt(0);
                 for (int Y = 0; Y < x; x--) {
                     Scanner inputScanner = new Scanner(System.in);
                     String userInput = inputScanner.nextLine();
 
-                    // char[] userCharArray = userInput.toCharArray();
                     for (int i = 0; i < stringCharTotal; i++) {
-                        character = movieTitle.charAt(i);
+                        char character = movieTitle.charAt(i);
+
                         if (character == userInput.charAt(0)) {
                             System.out.println("Nice! there is a match");
-                            index = movieTitle.indexOf(character, i);
-                            // newTitle = title.replace(title.charAt(titleIndex), randomMovieTitle.charAt(index));
-                            //char titleChar = title.charAt(s);
-                            //title = title.replace(titleChar, character);
+                            int index = movieTitle.indexOf(character, i);
                             char[] charHidden = title.toCharArray();
                             charHidden[index] = character;
                             title = String.valueOf(charHidden);
@@ -59,7 +52,7 @@ public class Game {
                     System.out.println("You lose! ");
                     System.out.println("The movie is :  " + movieTitle);
                 }
-                System.out.println(character + " " + " " + index + " " + title);
+                // System.out.println(character + " " + " " + index + " " + title);
 
             } catch (IndexOutOfBoundsException exception) {
                 System.out.print("Index is out of bounds");
