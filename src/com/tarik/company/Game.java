@@ -5,10 +5,10 @@ import java.util.Scanner;
 
 public class Game {
 
-    public Game() {
+    private Game() {
     }
 
-    public void play(String movieTitle) {
+    public static void play(String movieTitle) {
 
         System.out.println("Welcome to MovieGame, start guessing a letter that might be in the title," +
                 "your guesses number depends on the movie title length.");
@@ -19,7 +19,7 @@ public class Game {
             try {
                 int x = stringCharTotal;
                 String title = movieTitle.replaceAll("[a-zA-Z]", "_"); // replace each letter with an "_"
-                for (int Y = 0; Y < x; x--) {
+                for (int y = 0; y < x; x--) {
                     Scanner inputScanner = new Scanner(System.in);
                     String userInput = inputScanner.nextLine();
 
